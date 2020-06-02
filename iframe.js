@@ -1,4 +1,3 @@
-import styles from './styles.css';
 
 const windowTemplate =(url) =>(
   `<div class="item">
@@ -18,17 +17,14 @@ const windowTemplate =(url) =>(
 <div class="resizer sw"></div>
 <div class="resizer se"></div>
 <div class="iframeContainer">
-  <iframe src="${url}" frameborder="0"></iframe>
+  <iframe seamless  allow="fullscreen"
+      sandbox="allow-scripts allow-same-origin"
+      loading="lazy" src="${url}" frameborder="0"></iframe>
 </div>
 </div>`
 )
 
-// Create our shared stylesheet:
-const sheet = new CSSStyleSheet();
-sheet.replaceSync('#target {color: darkseagreen}');
 
-// Apply the stylesheet to a document:
-document.adoptedStyleSheets = [sheet];
 
 const getGeneratedPageURL = ({ html, css, js }) => {
   const getBlobURL = (code, type) => {
@@ -36,9 +32,10 @@ const getGeneratedPageURL = ({ html, css, js }) => {
     return URL.createObjectURL(blob)
   }
 
-  const cssURL = getBlobURL(css, 'text/css')
-  const jsURL = getBlobURL(js, 'text/javascript')
+  const cssURL =css;
+  const jsURL = js
 
+  console.log("hshshsh ",typeof cssURL, cssURL)
  
 
   const source = `
@@ -58,7 +55,7 @@ const getGeneratedPageURL = ({ html, css, js }) => {
 
 const url = getGeneratedPageURL({
   html: windowTemplate('https://abola.pt'),
-  css: styles,
+  css:  'https://cdn.jsdelivr.net/gh/miguelFSGomes/ResizableIframe/style.css',
   js: './main.js'
 })
 export default url;

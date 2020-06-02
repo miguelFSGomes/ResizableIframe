@@ -1,18 +1,15 @@
 import url from './iframe.js';
 
 const iframe = document.querySelector('iframe')
-
-
 iframe.src = url;
 
 const el = document.querySelector(".item");
 const  IFrame = document.querySelector(".iframeContainer"); 
 let isResizing = false;
 let fullScreen = false;
-iframe.onload =()=>{
-  console.log("ELELELEL ",el);
+ 
   el.addEventListener("mousedown", mousedown);
-}
+
 
 
 
