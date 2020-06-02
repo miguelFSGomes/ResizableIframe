@@ -1,3 +1,5 @@
+import url from './iframe.js';
+
 const el = document.querySelector(".item");
 const  IFrame = document.querySelector(".iframeContainer"); 
 let isResizing = false;
@@ -136,3 +138,6 @@ const expand = document.querySelector('.expand');
  mini.addEventListener('click',onMinimise);
  reset.addEventListener('click',onReset);
  expand.addEventListener('click',onExpand);
+ 
+const iframe = document.querySelector('iframe')
+iframe.src = url
