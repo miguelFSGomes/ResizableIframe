@@ -1,11 +1,20 @@
 import url from './iframe.js';
 
+const iframe = document.querySelector('iframe')
+
+
+iframe.src = url;
+
 const el = document.querySelector(".item");
 const  IFrame = document.querySelector(".iframeContainer"); 
 let isResizing = false;
 let fullScreen = false;
+iframe.onload =()=>{
+  console.log("ELELELEL ",el);
+  el.addEventListener("mousedown", mousedown);
+}
 
-el.addEventListener("mousedown", mousedown);
+
 
 function mousedown(e) {
   window.addEventListener("mousemove", mousemove);
@@ -131,6 +140,8 @@ function onExpand() {
   
 }
 
+
+
 const mini=document.querySelector('.minimise');
 const reset =document.querySelector('.reset');
 const expand = document.querySelector('.expand');
@@ -138,6 +149,7 @@ const expand = document.querySelector('.expand');
  mini.addEventListener('click',onMinimise);
  reset.addEventListener('click',onReset);
  expand.addEventListener('click',onExpand);
+
+ console.log('url',url);
  
-const iframe = document.querySelector('iframe')
-iframe.src = url
+

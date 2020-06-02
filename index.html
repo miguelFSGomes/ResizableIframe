@@ -7,26 +7,13 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="item">
-      <header>
-        <div class="minimise">
-          <div class="minus"></div>
-        </div>
-        <div>
-          <div class="reset"></div>
-        </div>
-        <div>
-          <div class="expand"><img src="./assets/expand.png" alt="" /></div>
-        </div>
-      </header>
-      <div class="resizer ne"></div>
-      <div class="resizer nw"></div>
-      <div class="resizer sw"></div>
-      <div class="resizer se"></div>
-      <div class="iframeContainer">
-        <iframe src="" frameborder="0"></iframe>
-      </div>
-    </div>
+    <iframe
+      name="outsideIframe"
+      src=""
+      frameborder="0"
+      allow="fullscreen"
+      allow-scripts
+    ></iframe>
     <script type="module" src="main.js"></script>
   </body>
 </html>
